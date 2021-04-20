@@ -17,7 +17,7 @@ func init() {
 	} else if a == "GridFS" {
 		adapter = newGridStoreAdapter()
 	} else if a == "Qiniu" {
-		adapter = newQiniuAdapter()
+		//adapter = newQiniuAdapter()
 	} else if a == "Sina" {
 		adapter = newSinaAdapter()
 	} else if a == "Tencent" {
