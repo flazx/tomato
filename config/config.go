@@ -14,10 +14,13 @@ import (
 
 // Config ...
 type Config struct {
-	AppName                          string   // 应用名称，必填
-	ServerURL                        string   // 服务对外地址，必填
-	DatabaseType                     string   // 数据库类型，可选： MongoDB、PostgreSQL
-	DatabaseURI                      string   // 数据库地址
+	AppName              string // 应用名称，必填
+	ServerURL            string // 服务对外地址，必填
+	DatabaseType         string // 数据库类型，可选： MongoDB、PostgreSQL
+	DatabaseURI          string // 数据库地址
+	DatabaseUserName     string // 数据库用戶名
+	DatabaseUserPassword string // 数据库密碼
+
 	AppID                            string   // 必填
 	MasterKey                        string   // 必填
 	ClientKey                        string   // 选填
@@ -109,6 +112,9 @@ func parseConfig() {
 	TConfig.ServerURL = beego.AppConfig.String("ServerURL")
 	TConfig.DatabaseType = beego.AppConfig.String("DatabaseType")
 	TConfig.DatabaseURI = beego.AppConfig.String("DatabaseURI")
+	TConfig.DatabaseUserName = beego.AppConfig.String("DatabaseUserName")
+	TConfig.DatabaseUserPassword = beego.AppConfig.String("DatabaseUserPassword")
+
 	TConfig.AppID = beego.AppConfig.String("AppID")
 	TConfig.MasterKey = beego.AppConfig.String("MasterKey")
 	TConfig.ClientKey = beego.AppConfig.String("ClientKey")
